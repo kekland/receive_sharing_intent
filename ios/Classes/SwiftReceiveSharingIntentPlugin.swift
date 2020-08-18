@@ -74,7 +74,7 @@ public class SwiftReceiveSharingIntentPlugin: NSObject, FlutterPlugin, FlutterSt
     }
     
     private func handleUrl(url: URL?, setInitialData: Bool) -> Bool {
-        if (url.absoluteString.contains("\(Bundle.main.infoDictionary!["CFBundleIdentifier"] as! String).share-extension")) {
+        if (url.absoluteString?.contains("\(Bundle.main.infoDictionary!["CFBundleIdentifier"] as! String).share-extension")) {
             if let url = url {
                 let appDomain = Bundle.main.bundleIdentifier!
                 let userDefaults = UserDefaults(suiteName: "group.\(appDomain)")
